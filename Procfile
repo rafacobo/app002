@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run rcn-app.py
+web: sh create_config.sh && streamlit run rcn-app.py
