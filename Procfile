@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run rcn-app.py runserver 0.0.0.0:5000
+web: sh setup.sh && streamlit run rcn-app.py
