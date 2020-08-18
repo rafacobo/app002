@@ -1,5 +1,5 @@
 import pandas as pd
-# import plotly.express as px
+import plotly.express as px
 import streamlit as st
 # import warnings
 # warnings.filterwarnings("ignore")
@@ -28,12 +28,11 @@ if filename == 'RTopConvictions20200626.csv' and not showtop:
     df = process(df)
     st.title("Reverse Convertible Notes")
     st.write(filename)
-    # fig = px.scatter(df, x=axex, y=axey, color=myby, width=mywidth, height=myheight, # size='Vida_Media',
+    fig = px.scatter(df, x=axex, y=axey, color=myby, width=mywidth, height=myheight, # size='Vida_Media',
                      hover_name='Composicion_1', hover_data=['Rentabilidad','Vida_Media', 'rhoCesta', 'volatCesta'])
-    # fig.update_traces(marker=dict(size=8, line=dict(width=1, color='DarkSlateGrey')), selector=dict(mode='markers'))
-    # fig.update_layout(font=dict(family='Arial', size=18, color='#494747'))
-    # st.write(fig.update_layout(width = mywidth, height = myheight))
-    st.markdown("Cunao...")
+    fig.update_traces(marker=dict(size=8, line=dict(width=1, color='DarkSlateGrey')), selector=dict(mode='markers'))
+    fig.update_layout(font=dict(family='Arial', size=18, color='#494747'))
+    st.write(fig.update_layout(width = mywidth, height = myheight))
 
 elif filename == 'RTopConvictions20200626.csv' and showtop:
     df = pd.read_csv(filename)
@@ -46,13 +45,12 @@ elif filename == 'RTopConvictions20200626.csv' and showtop:
         kk = pd.concat([kk, aux.head(nselect)])
     kk.reset_index(drop=True, inplace=True)
     st.title("Reverse Convertible Notes. Top Baskets")
-    # st.write(filename)
-    # fig = px.scatter(kk, x=axex, y=axey, color=myby, width=mywidth, height=myheight, # size='Vida_Media',
+    st.write(filename)
+    fig = px.scatter(kk, x=axex, y=axey, color=myby, width=mywidth, height=myheight, # size='Vida_Media',
                      hover_name='Composicion_1', hover_data=['Rentabilidad','Vida_Media', 'rhoCesta', 'volatCesta'])
-    # fig.update_traces(marker=dict(size=8, line=dict(width=1, color='DarkSlateGrey')), selector=dict(mode='markers'))
-    # fig.update_layout(font=dict(family='Arial', size=18, color='#494747'))
-    # st.write(fig.update_layout(width = mywidth, height = myheight))
-    st.markdown("Cataclanca...")
+    fig.update_traces(marker=dict(size=8, line=dict(width=1, color='DarkSlateGrey')), selector=dict(mode='markers'))
+    fig.update_layout(font=dict(family='Arial', size=18, color='#494747'))
+    st.write(fig.update_layout(width = mywidth, height = myheight))
     
 else:
     st.markdown("Coming soon...")
